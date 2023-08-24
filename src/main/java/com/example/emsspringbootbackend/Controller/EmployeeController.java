@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @CrossOrigin("http://localhost:8081")
-@RequestMapping(value = "/api/employees")
+@RequestMapping(value = "/api/v1/employees")
 @RestController
 public class EmployeeController {
 
@@ -19,7 +19,7 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping(value = "/status")
+    @GetMapping(value = "/api-status")
     public String returnStatus(){
         return "SUCCESS! this API is working correctly!";
     }
