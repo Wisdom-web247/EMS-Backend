@@ -36,4 +36,19 @@ public class EmployeeController {
         return employeeService.updateEmployee(empId);
 
     }
+
+     @GetMapping
+    public List<EmployeeEntity> findAllEmployees() {
+        return employeeService.findAllEmployees();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<EmployeeEntity> findEmployeeById(@PathVariable("id") Long id) {
+        return employeeService.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteEmployee(@PathVariable("id") Long id) {
+        employeeService.deleteEmployee(id);
+    }
 }
