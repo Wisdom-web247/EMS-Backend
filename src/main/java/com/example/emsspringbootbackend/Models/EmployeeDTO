@@ -1,0 +1,5 @@
+package com.example.emsspringbootbackend.Models;
+
+public class EmployeeDTO {
+
+}
