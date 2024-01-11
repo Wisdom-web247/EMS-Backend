@@ -28,4 +28,24 @@ public class EmployeeController {
     public Employee addEmployee(@RequestBody Employee employee) {
         return employeeService.addEmployee(employee);
     }
+
+    @PatchMapping(value = "/employee/{empId}")
+    public ResponseEntity<Employee> updateEmployee(@PathVariable("empId") Long empId, @RequestBody Employee employee) {
+        return employeeService.updateEmployee(empId, employee);
+    }
+
+    @DeleteMapping(value = "/employee/{id}")
+    public void deleteEmployee(@PathVariable("id") Long id) {
+        employeeService.deleteEmployee(id);
+    }
+
+    @GetMapping(value = "/employee/{id}")
+    public Employee getEmployeeById(@PathVariable("id") Long id) {
+        return employeeService.getEmployeeById(id).orElseThrow();
+    }
+
+    @GetMapping(value = "/employees")
+    public Iterable<Employee> getAllEmployees() {
+        return employeeService.getAllEmployees();
+    }
 }

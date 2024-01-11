@@ -16,25 +16,25 @@ public class Employee {
     @Column(name = "employee_id")
     private Long empId;
 
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "last_name", nullable = false)
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "email_address", nullable = false)
+    @Column(name = "email_address")
     private String email;
 
-    @Column(name = "contact_no", nullable = false)
+    @Column(name = "contact_no")
     private String contactNo;
 
-    @Column(name = "address", nullable = false)
+    @Column(name = "address")
     private String address;
 
-    @Column(name = "department", nullable = false)
+    @Column(name = "department")
     private String department;
 
-    @Column(name = "occupation", nullable = false)
+    @Column(name = "occupation")
     private String occupation;
 
 }

@@ -14,14 +14,39 @@ class EmsSpringbootBackendApplicationTests {
     @Test
     void testCreateEmployee() {
         Employee employee = new Employee();
-        employee.setFirstName("John");
+        employee.setFirstName("Peter");
         employee.setLastName("Doe");
-        employee.setContactNo("1234567890");
-        employee.setEmail("johndoe17@gmail.com");
+        employee.setContactNo("12334567890");
+        employee.setEmail("peterdoe17@gmail.com");
         employee.setAddress("123 Main St, New York, NY 10001");
-        employee.setDepartment("IT");
-        employee.setOccupation("Software Engineer");
+        employee.setDepartment("Accounting");
+        employee.setOccupation("Chartered Accountant");
         employeeRepository.save(employee);
     }
 
+    @Test
+    void testUpdateStudent() {
+        Employee employee = employeeRepository.findById(1L).get();
+        employee.setFirstName("Jane");
+        employee.setLastName("Doe");
+        employee.setContactNo("1234567890");
+        employee.setEmail("janedoe21@gmail.com");
+        employee.setAddress("321 Main St, New York, NY 10001");
+        employee.setDepartment("IT");
+        employeeRepository.save(employee);
+    }
+
+    @Test
+    void testDeleteStudent() {
+        employeeRepository.deleteById(3L);
+    }
+    @Test
+    void testGetStudent() {
+        Employee employee = employeeRepository.findById(1L).get();
+        System.out.println(employee);
+    }
+    @Test
+    void testGetAllStudents() {
+        System.out.println(employeeRepository.findAll());
+    }
 }

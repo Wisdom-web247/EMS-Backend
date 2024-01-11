@@ -5,8 +5,6 @@ import com.example.emsspringbootbackend.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -36,7 +34,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     public ResponseEntity<Employee> updateEmployee(Long empId, Employee employee) {
 
         Employee updateEmployee = employeeRepository.findById(empId).orElseThrow();
-
         updateEmployee.setFirstName(employee.getFirstName());
         updateEmployee.setLastName(employee.getLastName());
         updateEmployee.setContactNo(employee.getContactNo());
@@ -44,7 +41,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         updateEmployee.setAddress(employee.getAddress());
         updateEmployee.setDepartment(employee.getDepartment());
         updateEmployee.setOccupation(employee.getOccupation());
-
         employeeRepository.save(updateEmployee);
 
         return ResponseEntity.ok(updateEmployee);
