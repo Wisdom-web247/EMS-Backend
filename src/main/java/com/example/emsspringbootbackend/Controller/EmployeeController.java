@@ -25,30 +25,7 @@ public class EmployeeController {
     }
 //Admin to add new employee
     @PostMapping(value = "/employee")
-    public Employee addEmployee(@RequestBody Employee employee){
+    public Employee addEmployee(@RequestBody Employee employee) {
         return employeeService.addEmployee(employee);
-
-    }
-//Admin to update Employee
-    @PatchMapping (value = "/employee/{empId}")
-    public Employee updateEmployee(@RequestBody Employee employee){
-
-        return employeeService.updateEmployee(empId);
-
-    }
-
-     @GetMapping
-    public List<EmployeeEntity> findAllEmployees() {
-        return employeeService.findAllEmployees();
-    }
-
-    @GetMapping("/{id}")
-    public Optional<EmployeeEntity> findEmployeeById(@PathVariable("id") Long id) {
-        return employeeService.findById(id);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteEmployee(@PathVariable("id") Long id) {
-        employeeService.deleteEmployee(id);
     }
 }
